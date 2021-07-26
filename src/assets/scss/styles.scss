@@ -1,0 +1,129 @@
+@font-face {
+   font-family: 'Arial Regular';
+   src: url('../fonts/ArialMT.woff') format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
+@font-face {
+   font-family: 'Roboto';
+   src: url('../fonts/Roboto-Medium.woff') format('woff');
+   font-weight: 500;
+   font-style: normal;
+}
+
+body {
+  background-color: #ccc;
+}
+
+@import '~nouislider';
+
+input[type=number] {
+      padding-right: 0;
+}
+input[type=checkbox] {
+      width: 16px;
+      height: 16px;
+      margin-right: 8px;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {  
+      opacity: 1;
+}
+
+input[disabled] {
+      opacity: .5;
+}
+
+
+.input {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__label {
+    font-size: 13px;
+    margin-right: auto;
+  }
+
+  &__block {
+    position: relative;
+    width: 128px;
+    text-align: left;
+
+    .invalid {
+      border-color: #e64545;
+    }
+    .error-tip {
+      position: absolute;
+      top: -6px;
+      left: 0;
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+      transform: translateY(-100%);
+      background-color: #e64545;
+      color: #f0f2f4;
+      border-radius: 5px;
+      font-size: 11px;
+      line-height: 16px;
+      &_underline {
+        border-bottom: 1px dotted #f0f2f4;
+      }
+      &:before {
+        position: absolute;
+        content: '';
+        bottom: 0;
+        left: 10px;
+        width: 8px;
+        height: 8px;
+        transform: translateY(50%) rotate(45deg);
+        background-color: #e64545;
+      }
+    }
+  }
+
+
+  &__currency {
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #909294;
+  }
+
+  &__field {
+    text-align: right;
+    height: 26px;
+    max-width: 100%;
+    padding: 8px 10px;
+    box-sizing: border-box;
+    box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.15);
+    border: 1px solid #c0c2c4;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #242526;
+    outline: none;
+    &_small {
+      width: 50px;
+    }
+  }
+
+  &__mlt {
+    pointer-events: none;
+    position: absolute;
+    left: 6px;
+    top: 50%;
+    font-size: 16px;
+    line-height: 26px;
+    transform: translateY(-50%) rotate(45deg);
+    color: #909294;
+  }
+
+  &__result {
+    font-size: 13px;
+    color: #909294;
+  }
+}
+

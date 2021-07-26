@@ -1,28 +1,43 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <InvestmentForm />
+    <input type="text" class="url-input" placeholder="Введите url сервера для отправки данных" @change="changeUrl">
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import InvestmentForm from "@/components/InvestmentForm";
 export default {
+  
   name: 'app',
   components: {
-    HelloWorld
+    InvestmentForm,
+  },
+  methods: {
+    changeUrl(e){
+      this.$store.commit('setUrl', e.target.value);
+    }
   }
 }
 </script>
 
 <style lang="scss">
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Arial Regular', sans-serif;
+  font-size: 13px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: #232426;
+  margin-top: 60px auto;
 }
+
+.url-input {
+  display: block;
+  width: 316px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+
+
 </style>
